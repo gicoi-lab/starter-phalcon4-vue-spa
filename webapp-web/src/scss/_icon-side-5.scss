@@ -1,0 +1,4 @@
+@mixin icon-side-5($color){
+  $svg-in-url:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17.82 11.53'><path fill='#{$color}' d='M5.24,5.24v1h7.34v-1ZM0,4.19V7.34H3.14V4.19Zm1.05,1v1H2.1v-1ZM5.24,1.05V2.1H17.82v-1ZM0,0V3.14H3.14V0ZM1.05,1.05V2.1H2.1v-1ZM5.24,9.43v1.05h6.29V9.43ZM0,8.39v3.14H3.14V8.39Zm1.05,1v1.05H2.1V9.43Z'/></svg>");
+  background-image:escape-svg($svg-in-url);
+}

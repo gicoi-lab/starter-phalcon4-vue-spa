@@ -1,0 +1,46 @@
+/////////////////////////////////////////////////////////////////////
+//
+//  mixin statement-cutout
+//
+//------------------------------
+//
+// Input  : $color - background color
+//          $tl    - the cutted border length , top left corner
+//          $tr    - the cutted border length , top right corner
+//
+// Output : css statements
+//
+// Example: 1. statement-cutout($primary,1em)
+//             出現四個角都剪去1em-1em-√2em三角形的背景樣式
+//          2. statement-cutout($warning,1em,2em)
+//             左上、右下剪去股長1em的等腰三角形，左下右上剪去股長2em的等腰三角形
+//          3. statement-cutout($danger,$tr:2em,1em...)
+//             右上剪去股長2em的等腰三角形，其餘的角剪去股長1em的等腰三角形
+//          4. statement-cutout($info,1em,$scoop:true)
+//             四個角內凹為半徑1em的圓
+//
+// by lilychen1388
+//////////////////////////////////////////////////////////////////////
+
+@mixin statement-cutout($color,$tl:0,$tr:$tl,$bl:$tr,$br:$tl,$scoop:false){
+  $tl:$tl / 1.414;
+  $tr:$tr / 1.414;
+  $bl:$bl / 1.414;
+  $br:$br / 1.414;
+  background:$color;
+
+  @if $scoop{
+    background:radial-gradient(circle at bottom left,transparent $bl,$color 0) bottom left,
+               radial-gradient(circle at bottom right,transparent $br,$color 0) bottom right,
+               radial-gradient(circle at top left,transparent $tl,$color 0) top left,
+               radial-gradient(circle at top right,transparent $tr,$color 0) top right;
+  } @else {
+    background:linear-gradient(45deg,transparent $bl,$color 0%) bottom left,
+               linear-gradient(-45deg,transparent $br,$color 0%) bottom right,
+               linear-gradient(135deg,transparent $tl,$color 0%) top left,
+               linear-gradient(-135deg,transparent $tr,$color 0%) top right;
+  }
+
+  background-size:50% 50%;
+  background-repeat:no-repeat;
+}

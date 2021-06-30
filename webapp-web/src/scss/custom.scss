@@ -1,0 +1,1596 @@
+/* Custom Style
+
+ Based On :
+ Bootstrap v4.1.3 (https://getbootstrap.com/)
+ Copyright 2011-2018 The Bootstrap Authors
+ Copyright 2011-2018 Twitter, Inc.
+ Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+/* Custom Bootstrap Start */
+
+// Custom Bootstrap Setting
+$font-family-sans-serif: 'Noto Sans JP', 'Noto Sans CJK JP', Arial,-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+// bootstrap default value
+$white:           #fff;
+$gray-100:        #f8f9fa;
+$gray-200:        #e9ecef;
+$gray-300:        #dee2e6;
+$gray-400:        #ced4da;
+$gray-500:        #adb5bd;
+$gray-600:        #6c757d;
+$gray-700:        #495057;
+$gray-800:        #343a40;
+$gray-900:        #212529;
+$black:           #000;
+$dark:            $gray-800;
+$font-size-base:  1rem; // Assumes the browser default, typically `16px`
+$iphoneSE:        365px; // size for iphone SE / project variable
+$bk:              'lg'; // breakpoint / project variable
+
+
+// color map 委製方色票
+$blue:            #004bbe;
+$pink:            #ff64a0; // like btn active
+
+$gray-100:        #f0f0f0; // navbar-bg, some section bg, front input bg
+$gray-200:        #e3e3e3; // some section bg
+$gray-300:        #dddddd; // some section bg
+$gray-600:        #666666; // border
+$gray-800:        #333333; // body-color , navbar-color
+
+
+$orange:          #ec960a;
+$red:             #e60012;
+$disable-gray:    #ddd;
+
+//project color variables
+$gray-placeholder:            #808080; // placeholder
+$front-input-placeholder:     #9c9c9c; // input placeholder
+
+//theme color
+$primary:                           $blue;
+$warning:                           $orange;
+
+// project variables
+$navbar-bg:                         $gray-100;
+$navbar-color:                      $gray-800;
+$navbar-hover-color:                $primary;
+$navbar-disabled-color:             rgba($white, .3);
+$navbar-at-top-bg:                  rgba(#262626,47%);
+$navbar-at-top-color:               $white;
+
+  //$box-shadow:4px 3px 2px rgba(#030711,.7);
+$transition-slow:                   all .5s ease-in-out;
+
+//bootstrap variables
+$enable-caret:                      false;
+$navbar-light-color:                $navbar-color;
+$navbar-light-hover-color:          $navbar-hover-color;
+$navbar-light-active-color:         $navbar-hover-color;
+$navbar-light-disabled-color:       $navbar-disabled-color;
+$navbar-dark-color:                 $navbar-color;
+$navbar-dark-hover-color:           $navbar-hover-color;
+$navbar-dark-active-color:          $navbar-hover-color;
+$navbar-dark-disabled-color:        $navbar-disabled-color;
+
+$breadcrumb-bg:                     transparent;
+$breadcrumb-padding-y:              0rem;
+$breadcrumb-padding-x:              0rem;
+
+$breadcrumb-divider-color:          $dark;
+$breadcrumb-active-color:           $front-input-placeholder;
+$breadcrumb-divider:                quote(">");
+
+$table-striped-order:               even;
+
+$pagination-border-width:           0px;
+$pagination-bg:                     transparent;
+$pagination-focus-box-shadow:       none;
+$pagination-active-color:           $primary;
+$pagination-active-bg:              rgba($primary,.1);
+$pagination-hover-bg:               $gray-200;
+$pagination-focus-box-shadow:       none;
+
+$nav-tabs-border-color:             $warning;
+$nav-tabs-border-radius:            .5rem;
+$nav-tabs-link-active-color:        $white;
+$nav-tabs-link-active-bg:           $nav-tabs-border-color;
+
+
+$input-placeholder-color:           $gray-placeholder;
+
+$link-hover-decoration:             none;
+$heading-font-weigth:               700;
+$h5-font-size:                      $font-size-base * 1.5625;
+
+// 常用數值
+$headings-color:                    $black;
+$body-color:                        $gray-800;
+$font-size-base:                    1.125rem;
+
+
+//客製breakpoints and container-max-widths
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 925px,
+  lg: 1327px, // default: 992px
+  //lg: 1100px, // default: 992px
+  //xl: 1200px,  // default: 1200px
+  xl: 1650px  // ai-match 斷點
+  //xl: 1520px  // [響應式文字縮放]版斷點
+);
+// stylelint-disable-next-line scss/dollar-variable-default
+$container-max-widths: (
+  sm: 540px,
+  md: 890px,
+  lg: 1230px, // default: 960px
+  //xl: 1140px  // default: 1140px
+  xl: 1370px  // ai-match 斷點
+  //xl: 1500px  // [響應式文字縮放]版寬度
+);
+// max-width < breakpoints
+
+
+// Custom Bootstrap Setting Over
+
+// Required
+@import "~bootstrap/scss/functions";
+//$navbar-dark-toggler-icon-bg:       str-replace(url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"), "#", "%23");
+//$navbar-light-toggler-icon-bg:      str-replace(url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"), "#", "%23");
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+// Optional
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/code";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/input-group";
+@import "~bootstrap/scss/custom-forms";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/breadcrumb";
+@import "~bootstrap/scss/pagination";
+@import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/jumbotron";
+@import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/progress";
+@import "~bootstrap/scss/media";
+@import "~bootstrap/scss/list-group";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/toasts";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/tooltip";
+@import "~bootstrap/scss/popover";
+@import "~bootstrap/scss/carousel";
+@import "~bootstrap/scss/spinners";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/print";
+/* Custom Bootstrap Over */
+
+/* Custom CSS Start */
+@import "navbar-brand-image";
+@import "icon-demand";
+@import "icon-supplier";
+@import "icon-investor";
+@import "icon-like";
+
+
+
+// HTML
+//html{ //響應式文字縮放
+  //@include media-breakpoint-up(lg){
+    //font-size:1.2rem;
+  //}
+  //@include media-breakpoint-up(xl){
+    ////font-size:1.4rem;
+    ////font-size:1.55rem;
+    //font-size:1.875rem; // 30px in xl
+  //}
+//}
+
+// Utilities
+
+// 備用class :
+// .container.no-x
+// .px-gutter
+// .mx-gutter
+
+.container.no-xl{
+  @include media-breakpoint-up(xl){
+    max-width:map-get($container-max-widths,lg);
+  }
+}
+
+.match-center {
+  .container{
+    @include media-breakpoint-up(md) {
+      max-width: calc( 100% - 3rem);
+    }
+    @include media-breakpoint-up(lg) {
+      max-width:map-get($container-max-widths,lg);
+    }
+    @include media-breakpoint-up(xl) {
+      max-width:map-get($container-max-widths,lg);
+    }
+  }
+}
+
+.px-gutter{
+  padding-left:$grid-gutter-width/2;
+  padding-right:$grid-gutter-width/2;
+}
+.mx-gutter{
+  margin-left:$grid-gutter-width/2;
+  margin-right:$grid-gutter-width/2;
+}
+
+.font-weight-medium{
+  font-weight:500;
+}
+.font-weight-heavy{
+  font-weight:900;
+}
+.word-break-word{
+  word-break:break-word;
+}
+.bg-gray-100{
+  background-color:$gray-100;
+}
+.bg-gray-200{
+  background-color:$gray-200;
+}
+.bg-gray-300{
+  background-color:$gray-300;
+}
+.bg-gray-400{
+  background-color:$gray-400;
+}
+.bg-gray-500{
+  background-color:$gray-500;
+}
+.bg-gray-600{
+  background-color:$gray-600;
+}
+.bg-gray-700{
+  background-color:$gray-700;
+}
+.bg-gray-800{
+  background-color:$gray-800;
+}
+.bg-warning-light{
+  background-color:lighten($warning, 40%);
+}
+.border-sm-right-gray-400{
+  @include media-breakpoint-up(sm){
+    border-right:1px solid $gray-400 !important;
+  }
+}
+.border-lg-right-gray-400{
+  @include media-breakpoint-up(lg){
+    border-right:1px solid $gray-400 !important;
+  }
+}
+%text-in-img{
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+}
+.pt-6rem{
+  padding-top:6.4rem;
+}
+              // test
+              .pt-sm-6rem{
+                @include media-breakpoint-up(sm){
+                  padding-top:6.4rem !important;
+                }
+              }
+              .pt-sm-3rem{
+                @include media-breakpoint-up(sm){
+                  padding-top:3.2rem !important;
+                }
+              }
+              // END test
+.py-6rem{
+  padding-top:6.4rem !important;
+  padding-bottom:6.4rem !important;
+}
+              // test no-choose
+              // END test
+.pt-3rem{
+  padding-top:3.2rem;
+}
+.pt-2rem{
+  padding-top:2rem;
+}
+.pt-1rem{
+  padding-top:1rem;
+}
+.pt-0rem{
+  padding-top:0rem;
+}
+              // test
+              .px-xl-6rem{
+                @include media-breakpoint-up(xl){
+                  padding-left:6.4rem !important;
+                  padding-right:6.4rem !important;
+                }
+              }
+              // END test
+.px-sm-3rem{
+  @include media-breakpoint-up(sm){
+    padding-left:3.2rem !important;
+    padding-right:3.2rem !important;
+  }
+}
+              // test
+              .px-3rem{
+                padding-left:3.2rem !important;
+                padding-right:3.2rem !important;
+              }
+              .px-md-3rem{
+                @include media-breakpoint-up(md){
+                  padding-left:3.2rem !important;
+                  padding-right:3.2rem !important;
+                }
+              }
+              .mx-sm-3rem{
+                @include media-breakpoint-up(sm){
+                  margin-left:3.2rem !important;
+                  margin-right:3.2rem !important;
+                }
+              }
+              .mb-3rem{
+                margin-bottom:3.2rem !important;
+              }
+              .mb-lg-6rem{
+                @include media-breakpoint-up(lg){
+                  margin-bottom:6.4rem !important;
+                }
+              }
+              // END test
+
+.my-3rem{
+    margin-top:3.2rem !important;
+    margin-bottom:3.2rem !important;
+}
+
+.pb-1_6rem{
+  padding-bottom:1.6rem;
+}
+.mb-1_6rem{
+  margin-bottom:1.6rem;
+}
+.mw-23em{
+  max-width:23.46rem;
+}
+.img-style{
+  width:100%;
+  @include media-breakpoint-up(md){
+    width:61.8%;
+  }
+}
+$text-shadow:4px 3px 2px rgba(#030711,.7);
+.text-shadow{ // kv text
+  text-shadow:$text-shadow;
+}
+.p-style{
+  line-height:1.78;
+  // 2020/08/19 關閉文字分散對齊
+  //text-align:justify;
+}
+p{
+  word-break:break-word;
+}
+.horizon{
+  &-heading{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    &::after,&::before{
+      content:" ";
+      //width:1.8em;
+      //width:100%;
+      flex-grow:1;
+      @include media-breakpoint-up(md){
+        //width:3em;
+      }
+      border-top:2px solid $headings-color;
+    }
+    &::before{
+      margin-right:.5em;
+      //margin-right:0rem;
+      //@include media-breakpoint-up(sm){
+        //margin-right:1rem;
+      //}
+      //@include media-breakpoint-up(lg){
+        //margin-right:2rem;
+      //}
+    }
+    &::after{
+      margin-left:.5em;
+      //margin-left:0rem;
+      //@include media-breakpoint-up(sm){
+        //margin-left:1rem;
+      //}
+      //@include media-breakpoint-up(lg){
+        //margin-left:2rem;
+      //}
+    }
+  }
+}
+#xpt-menu {
+  box-shadow: $box-shadow;
+}
+// Nav
+.navbar{
+  background:$navbar-bg;
+  //padding-right:0em;
+  //padding-left:0em;
+  transition:$transition-base;
+  //box-shadow:$box-shadow;
+  /*
+  @include media-breakpoint-up(#{$bk}){
+    padding:1.25rem 6.7rem;
+  }
+  @include media-breakpoint-up(xl){
+    padding:0rem 6.7rem 2.5rem;
+  }
+  &-brand{
+    padding:0;
+    margin-right:0;
+    margin-left:1rem;
+    @include media-breakpoint-up(#{$bk}){
+      margin-left:0rem;
+    }
+
+    //$navbar-brand-icon:$navbar-color;
+    //@include navbar-brand-image($navbar-brand-icon);
+    background-repeat:no-repeat;
+    background-position:center left;
+    background-size:contain;
+    text-indent:-200vw;
+    color:transparent;
+
+    width:11rem;
+    height:1.87rem;
+    //height:2.55em;
+    //@media screen and (max-width:#{$iphoneSE}){
+      //height:2em;
+    //}
+    @include media-breakpoint-up(#{$bk}){
+      width:21rem;
+      height:3.45rem;
+    }
+  }
+   */
+
+  &-nav{
+    padding-right:$navbar-padding-x; // $spacer !default;
+    padding-left:$navbar-padding-x;  // $spacer !default;
+    @include media-breakpoint-up(#{$bk}){
+      padding-right:0;
+      padding-left:0;
+    }
+    .nav{
+      &-item{
+      }
+      &-link{
+        position:relative;
+
+        &:focus,&.focus{
+          // for focus style
+          outline: $navbar-hover-color dotted 3px;
+          outline-offset: -3px;
+        }
+        &:hover,&:active,&.active,&:focus,&.focus{
+          // for hover / active style
+        }
+      }
+    }
+  }
+}
+// $navbar-at-top-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-at-top-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+.at-top{
+  .landing-page & > .navbar{
+    background:$navbar-at-top-bg;
+    box-shadow:none;
+    .navbar-brand{
+      @include navbar-brand-image($navbar-at-top-color);
+    }
+    /*
+    .navbar-toggler-icon{
+      background-image:escape-svg($navbar-at-top-toggler-icon-bg);
+    }
+    */
+    .nav-link{
+      color:$navbar-at-top-color;
+    }
+  }
+}
+//@import "component/nav-split";
+
+//$navbar-height:3.61rem;
+//$navbar-height-lg:5.95rem;
+//$navbar-height-xl:8.45rem;
+
+$navbar-height:3.725em;
+$navbar-height-md:6.625em;
+$navbar-height-lg:8.887em;
+$navbar-height-xl:9.387em;
+main{ // padding a blank area for header.fixed-top
+  //@media screen and (max-width:#{$iphoneSE}){
+    //margin-top:2em;
+  //}
+  margin-top:$navbar-height;
+  @include media-breakpoint-up(md){
+    margin-top:$navbar-height-md;
+  }
+  @include media-breakpoint-up(lg){
+    margin-top:$navbar-height-lg;
+  }
+  @include media-breakpoint-up(xl){
+    margin-top:$navbar-height-xl;
+  }
+}
+
+// Body
+
+
+// 文字反白style
+::selection{
+  background:$primary;
+  color:$white;
+}
+
+// Front
+.kv{
+  margin-top:-$navbar-height;
+  @include media-breakpoint-up(md){
+    margin-top:-$navbar-height-md;
+  }
+  @include media-breakpoint-up(lg){
+    margin-top:-$navbar-height-lg;
+  }
+  @include media-breakpoint-up(xl){
+    margin-top:-$navbar-height-xl;
+  }
+
+  position:relative;
+  &-container{
+    @extend %text-in-img;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+  }
+}
+.display-1{
+  font-weight:700;
+  // font-size
+  @media screen and (max-width:#{$iphoneSE}){
+    font-size:2.5rem;
+  }
+  font-size:3rem;
+  @include media-breakpoint-up(lg){
+    font-size:4.92rem;
+  }
+  // margin-top
+  @include media-breakpoint-up(sm){
+    margin-top:2.5rem;
+  }
+  @include media-breakpoint-up(lg){
+    margin-top:0rem;
+  }
+  // margin-bottom
+  margin-bottom:2rem;
+  @include media-breakpoint-up(lg){
+    margin-bottom:3.7rem;
+  }
+}
+.front{
+  &-h1{
+    font-weight:500;
+    // font-size
+    @media screen and (max-width:#{$iphoneSE}){
+      font-size:1.4rem;
+    }
+    font-size:1.8rem;
+    @include media-breakpoint-up(lg){
+      font-size:3.26rem;
+    }
+    &-zh{
+      margin-bottom:2.1rem;
+      @include media-breakpoint-up(sm){
+        margin-bottom:.4rem;
+      }
+      // letter-spacing
+      letter-spacing:0.35rem;
+      @include media-breakpoint-up(lg){
+        letter-spacing:1rem;
+      }
+    }
+  }
+  &-heading{
+    font-size:1.91rem;
+    line-height:1.45;
+    @include media-breakpoint-up(lg){
+      font-size:2.81rem;
+      line-height:1.45;
+    }
+
+    &.horizon-heading{
+      &::after,&::before{
+        border-top-color:$primary;
+      }
+    }
+  }
+}
+.display-2{
+  // font-size
+  //@media screen and (max-width:#{$iphoneSE}){
+    //font-size:2.5rem;
+  //}
+  font-size:3rem;
+  @include media-breakpoint-up(lg){
+    font-size:3.91rem;
+  }
+  // margin-top
+  margin-top:2.5rem;
+  @include media-breakpoint-up(lg){
+    margin-top:4.7rem;
+  }
+  // padding-bottom
+  padding-bottom:2.5rem;
+  @include media-breakpoint-up(lg){
+    padding-bottom:1.85rem;
+  }
+  // margin-bottom
+  margin-bottom:0rem;
+  border-bottom-width:2px !important;
+}
+.display-3{
+  // margin-top
+  margin-top:2.5rem;
+  @include media-breakpoint-up(lg){
+    margin-top:1.65rem;
+  }
+  &-zh{
+    // font-size
+    //@media screen and (max-width:#{$iphoneSE}){
+      //font-size:2.5rem;
+    //}
+    font-size:3rem;
+    @include media-breakpoint-up(lg){
+      font-size:4.15rem;
+    }
+    // margin-bottom
+    margin-bottom:.8rem;
+    @include media-breakpoint-up(lg){
+      margin-bottom:.8rem;
+    }
+    // letter-spacing
+    letter-spacing:0.35rem;
+    @include media-breakpoint-up(lg){
+      letter-spacing:1rem;
+    }
+  }
+  // font-size
+  font-size:1.55rem;
+  @include media-breakpoint-up(lg){
+    font-size:2.76rem;
+  }
+  // margin-bottom
+  margin-bottom:2rem;
+  @include media-breakpoint-up(lg){
+    margin-bottom:3.7rem;
+  }
+}
+  // about & partner section
+
+  // matchmaking section
+$slide-section-height:43vw;
+.slide{
+  &-section{
+    background:$gray-800;
+    display:flex;
+    // flex-direction
+    flex-direction:column;
+    @include media-breakpoint-up(sm){
+      flex-direction:row;
+    }
+  }
+  &-item{
+    position:relative;
+    overflow:hidden;
+    transition:$transition-slow;
+    @include media-breakpoint-up(sm){
+      width:50%;
+      &:hover, &.hover, &:active{
+        width:75%;
+      }
+    }
+    &:hover, &.hover, &:active{
+      & .slide-img{
+        opacity:1;
+      }
+    }
+  }
+  &-img{
+    height:100vw;
+    @include media-breakpoint-up(sm){
+      height:$slide-section-height;
+    }
+    opacity:.4;
+    transition:$transition-fade;
+  }
+  &-container{
+    @extend %text-in-img;
+    // padding
+    padding:.5rem;
+    @include media-breakpoint-up(sm){
+      padding:5.65rem 9.5%;
+    }
+  }
+}
+  // front form
+.mw-front-form{
+  max-width:49.6rem;
+}
+// END front form
+
+// Page
+.page{
+  &-heading{
+    font-size:1.875rem;
+    line-height:1.65;
+  }
+}
+
+  // about page
+.img{
+  &-about{
+    height:9rem;
+  }
+}
+
+  // login page
+
+.icon{
+  width:5.5em;
+  height:5.7em;
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
+}
+.icon-demand{
+  @include icon-demand($primary);
+}
+.icon-supplier{
+  @include icon-supplier($primary);
+}
+.icon-investor{
+  @include icon-investor($primary);
+}
+.font-small{
+  font-size:.75rem;
+}
+.mw-login-form{
+  max-width:28rem;
+}
+
+// stakeholder list
+.search{
+  &-input{
+    @include media-breakpoint-up(lg){
+      position:absolute;
+      top:.3rem;
+      right:3.2rem;
+      //width:calc(50% - 18rem);
+      width:14rem;
+    }
+    @include media-breakpoint-up(xl){
+      width:18.5rem;
+    }
+
+  }
+  &-major{
+    display:flex;
+    @media screen and (max-width:#{$iphoneSE}){
+      justify-content:space-between !important;
+    }
+    @extend .justify-content-evenly;
+
+    // items icon
+    &-demand{
+      @include icon-demand($black);
+    }
+    &-supplier{
+      @include icon-supplier($black);
+    }
+    &-investor{
+      @include icon-investor($black);
+    }
+    &-heading{
+      display:inline;
+      font-size:1.2rem;
+      @include media-breakpoint-up(md){
+        font-size:$h5-font-size;
+      }
+      font-weight:500;
+      transition:$transition-base;
+      padding-bottom:.21em;
+
+      color:$black;
+      border-bottom:2px solid transparent;
+    }
+    &-link{
+      //margin-bottom:1rem;
+      &:hover, &.hover, &:active, &.active{
+        $hover-color:$primary;
+        .search-major-heading{
+          color:$hover-color;
+          border-bottom-color:$hover-color;
+        }
+        .search-major-demand{
+          @include icon-demand($hover-color);
+        }
+        .search-major-supplier{
+          @include icon-supplier($hover-color);
+        }
+        .search-major-investor{
+          @include icon-investor($hover-color);
+        }
+      }
+    }
+  }
+}
+.stakeholder{
+  $side-length:10.6rem;
+  $p-value:.8rem;
+  &-avatar{
+    display:flex;
+    align-items:center;
+    //height:$side-length;
+    height:auto;
+    width:$side-length;
+    padding:$p-value;
+    &-img{
+      width:$side-length - $p-value*2;
+      height:auto;
+    }
+  }
+}
+
+  // respondsive grid plugin
+@mixin row-gutter($gutter: $grid-gutter-width){
+  margin-right : - $gutter / 2 ;
+  margin-left : - $gutter / 2 ;
+}
+@mixin cols-gutter($gutter: $grid-gutter-width){
+  padding-right : $gutter / 2 ;
+  padding-left : $gutter / 2 ;
+}
+$card-gutter-xl:6.4rem;
+$card-gutter-lg:3.2rem;
+.card-row{
+  @include make-row();
+  @include media-breakpoint-up(lg){
+    @include row-gutter($card-gutter-lg);
+  }
+  @include media-breakpoint-up(xl){
+    @include row-gutter($card-gutter-xl);
+  }
+  [class^='col']{
+    @include media-breakpoint-up(lg){
+      @include cols-gutter($card-gutter-lg);
+    }
+    @include media-breakpoint-up(xl){
+      @include cols-gutter($card-gutter-xl);
+    }
+    //@include add-gutter($card-gutter);
+  }
+}
+  // END respondsive grid plugin
+.card{
+  &-img-top{
+    border-bottom:13px solid $gray-900;
+  }
+  &-title{
+    font-size:1.25rem;
+  }
+  &-text{
+    font-size:.875em;
+  }
+  &-tag{
+    display: inline-block;
+    margin-bottom: .3rem;
+    &-img{
+      width:1.5rem;
+      height:1.5rem;
+    }
+  }
+  &-more{
+    $theme-color:$primary;
+
+    font-size:.9rem;
+    font-weight:700;
+    color:$theme-color;
+    padding-bottom:.05rem;
+    border-bottom:2px solid $theme-color;
+
+    &:hover{
+      border-bottom-color:$link-hover-color;
+      color: darken($link-hover-color, $emphasized-link-hover-darken-percentage);
+    }
+  }
+}
+.btn-like{
+  $side-length:2.7rem;
+  position:relative;
+  left:-.2rem;
+  width:$side-length;
+  height:$side-length;
+
+  @include icon-like($gray-600);
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
+  transition:$transition-base;
+
+  &:hover, &.hover, &:active, &.active{
+    @include icon-like($pink);
+  }
+}
+
+// Carousel
+.carousel{
+  &-indicators{
+    //bottom:-2.5rem;
+    li{
+      $side-length:13px;
+      width:$side-length;
+      height:$side-length;
+      border-radius:100%;
+      border:none;
+      background-color:#787878;
+    }
+  }
+}
+
+
+
+// News
+.news-title{
+  @extend %text-in-img;
+  transition:$transition-slow;
+  // background-color
+  background-color:rgba($black,.65);
+  &:hover, &.hover, &:active, &.active{
+    background-color:transparent;
+  }
+
+  color:$white;
+  text-shadow:2px 2px 2px rgba($black,.7);
+  // font-size
+  font-size:1rem;
+  @include media-breakpoint-up(md){
+    font-size:1.5rem;
+  }
+  @include media-breakpoint-up(lg){
+    font-size:2.5rem;
+  }
+}
+
+// Post list page
+.posts{
+  &-title{
+    font-weight:300;
+    letter-spacing:.125rem;
+  }
+  &-p{
+    line-height:2.65em;
+    flex-grow:1;
+    margin-bottom:.5rem;
+    @include media-breakpoint-up(md){
+      font-size:1.2em;
+      margin-bottom:0rem;
+    }
+  }
+  &-ym{
+    color:$gray-500;
+  }
+  &-d{
+    color:$gray-500;
+    @include media-breakpoint-up(md){
+      color:$dark;
+      font-size:3em;
+    }
+  }
+}
+
+ // Post
+.post{
+  &-title{
+    //font-weight:300;
+    letter-spacing:.125rem;
+  }
+  &-p{
+    margin-bottom:3em;
+    line-height:2em;
+    @include media-breakpoint-up(md){
+      font-size:1.2em;
+    }
+  }
+}
+
+@import 'icon-side-1';
+@import 'icon-side-2';
+@import 'icon-side-3';
+@import 'icon-side-4';
+@import 'icon-side-5';
+@import 'icon-side-6';
+@import 'icon-side-7';
+
+// match-center
+.navbar-side{
+  $navbar-width-length:13.6rem;
+  $p-value:.8rem;
+  width:$navbar-width-length;
+  &-avatar{
+    display:flex;
+    //height:$navbar-width-length;
+    width:$navbar-width-length;
+    padding:$p-value;
+
+    &-img{
+      width:$navbar-width-length - $p-value*2;
+      height:auto;
+    }
+  }
+  .nav-link{
+    $icon-size:1.1rem;
+    $icon-color:$front-input-placeholder;
+    $padding-y:.63rem;
+
+    padding:$padding-y $nav-link-padding-x $padding-y ($icon-size+$nav-link-padding-x);
+    color:$black;
+    background-repeat:no-repeat;
+    background-position:left center;
+    background-size:$icon-size;
+
+
+    &-1{
+      @include icon-side-1($icon-color);
+    }
+    &-2{
+      @include icon-side-2($icon-color);
+    }
+    &-3{
+      @include icon-side-3($icon-color);
+      //@include icon-like($icon-color);
+    }
+    &-4{
+      @include icon-side-4($icon-color);
+    }
+    &-5{
+      @include icon-side-5($icon-color);
+    }
+    &-6{
+      @include icon-side-6($icon-color);
+    }
+    &-7{
+      @include icon-side-7($icon-color);
+    }
+    &:hover, &.hover, &:active, &.active{
+      color:$warning;
+      text-decoration:underline;
+      &.nav-link{
+        $color:$warning;
+        &-1{
+          @include icon-side-1($color);
+        }
+        &-2{
+          @include icon-side-2($color);
+        }
+        &-3{
+          @include icon-side-3($color);
+          //@include icon-like($color);
+        }
+        &-4{
+          @include icon-side-4($color);
+        }
+        &-5{
+          @include icon-side-5($color);
+        }
+        &-6{
+          @include icon-side-6($color);
+        }
+        &-7{
+          @include icon-side-7($color);
+        }
+      }
+    }
+    &[disabled], &.disabled{
+      cursor:default;
+      color:$gray-200;
+      &.nav-link{
+        $color:$gray-200;
+        &-1{
+          @include icon-side-1($color);
+        }
+        &-2{
+          @include icon-side-2($color);
+        }
+        &-3{
+          @include icon-side-3($color);
+          //@include icon-like($color);
+        }
+        &-4{
+          @include icon-side-4($color);
+        }
+        &-5{
+          @include icon-side-5($color);
+        }
+        &-6{
+          @include icon-side-6($color);
+        }
+        &-7{
+          @include icon-side-7($color);
+        }
+      }
+      &, &:hover, &.hover, &:active, &.active{
+      }
+    }
+  }
+}
+$container-match-center-width:53.6rem;
+.container-match-center{
+  width:$container-match-center-width;
+  margin-left:auto;
+}
+
+.match-center{
+  // Custom form elements under .match-center
+  $theme-color:$warning;
+  $input-focus-box-shadow:0 0 0 $input-focus-width rgba($theme-color, .25);
+  $custom-control-indicator-checked-disabled-bg:  rgba($theme-color, .5);
+  $custom-range-thumb-active-bg:lighten($theme-color, 15%);
+
+  .form-control{
+    &:focus{
+      border-color:$theme-color;
+      box-shadow:$input-focus-box-shadow;
+    }
+  }
+  .custom-control-input {
+    &:checked ~ .custom-control-label::before {
+      border-color: $theme-color;
+      background-color:$theme-color;
+    }
+
+    &:focus ~ .custom-control-label::before {
+      // the mixin is not used here to make sure there is feedback
+      border-color: $theme-color;
+      box-shadow:$input-focus-box-shadow;
+    }
+
+    &:focus:not(:checked) ~ .custom-control-label::before {
+      border-color: $theme-color;
+    }
+
+    &:not(:disabled):active ~ .custom-control-label::before {
+      background-color: $theme-color;
+      border-color: $theme-color;
+    }
+
+    // Use [disabled] and :disabled to work around https://github.com/twbs/bootstrap/issues/28247
+    &[disabled],
+    &:disabled {
+      ~ .custom-control-label {
+
+        &::before {
+          background-color: $custom-control-indicator-disabled-bg;
+        }
+      }
+    }
+  }
+  .custom-checkbox {
+
+    .custom-control-input:indeterminate ~ .custom-control-label {
+      &::before {
+        border-color:$theme-color;
+        background:$theme-color;
+      }
+    }
+
+    .custom-control-input:disabled {
+      &:checked ~ .custom-control-label::before {
+        background-color: $custom-control-indicator-checked-disabled-bg;
+      }
+      &:indeterminate ~ .custom-control-label::before {
+        background-color: $custom-control-indicator-checked-disabled-bg;
+      }
+    }
+  }
+  .custom-switch {
+    .custom-control-input:disabled {
+      &:checked ~ .custom-control-label::before {
+        background-color: $custom-control-indicator-checked-disabled-bg;
+      }
+    }
+  }
+  .custom-select {
+    &:focus{
+      border-color:$theme-color;
+      box-shadow:$input-focus-box-shadow;
+    }
+  }
+  .custom-range {
+    &:focus {
+      // Pseudo-elements must be split across multiple rulesets to have an effect.
+      // No box-shadow() mixin for focus accessibility.
+      &::-webkit-slider-thumb { box-shadow:$input-focus-box-shadow; }
+      &::-moz-range-thumb     { box-shadow:$input-focus-box-shadow; }
+      &::-ms-thumb            { box-shadow:$input-focus-box-shadow; }
+    }
+    &::-webkit-slider-thumb {
+      @include gradient-bg($theme-color);
+
+      &:active {
+        @include gradient-bg($custom-range-thumb-active-bg);
+      }
+    }
+    &::-moz-range-thumb {
+      @include gradient-bg($theme-color);
+      @include box-shadow($input-focus-box-shadow);
+      &:active {
+        @include gradient-bg($custom-range-thumb-active-bg);
+      }
+    }
+    &::-ms-thumb {
+      @include gradient-bg($theme-color);
+      @include box-shadow($input-focus-box-shadow);
+      &:active {
+        @include gradient-bg($custom-range-thumb-active-bg);
+      }
+    }
+
+    &:disabled {
+      &::-webkit-slider-thumb {
+        background-color: $custom-range-thumb-disabled-bg;
+      }
+
+      &::-webkit-slider-runnable-track {
+        cursor: default;
+      }
+
+      &::-moz-range-thumb {
+        background-color: $custom-range-thumb-disabled-bg;
+      }
+
+      &::-moz-range-track {
+        cursor: default;
+      }
+
+      &::-ms-thumb {
+        background-color: $custom-range-thumb-disabled-bg;
+      }
+    }
+  }
+}
+.nav-matching{
+  .nav-link{
+    cursor:pointer;
+
+    @media screen and (max-width:#{$iphoneSE}){
+      font-size:.9rem;
+    }
+    font-size:1rem;
+    @include media-breakpoint-up(sm){
+      font-size:$font-size-base;
+    }
+    &:hover, &.hover, &:active, &.active{
+      color:$warning;
+      text-decoration:underline;
+    }
+  }
+}
+.nav-tabs-warning{
+  .nav-link{
+    color:$warning;
+    padding:.4rem .5rem;
+    border-color:$warning !important;
+    width:auto;
+    @include media-breakpoint-up(md){
+      width:11.3rem;
+    }
+    font-size:1rem;
+    @include media-breakpoint-up(sm){
+      font-size:$font-size-base;
+    }
+    text-align:center;
+    &:hover{
+      background-color:$warning;
+      color:$white;
+    }
+  }
+}
+.btn-warning{
+  color:$white;
+}
+.btn-outline-warning{
+  background-color:$white;
+  &:not(:disabled):not(.disabled){
+    &:hover, &.hover, &:active, &.active{
+      color:$white;
+    }
+  }
+}
+
+.table-responsive{
+  width:calc( 100vw - #{$grid-gutter-width});
+  @include media-breakpoint-up(sm){
+    width:calc( #{map-get($container-max-widths,'sm')} - #{$grid-gutter-width});
+  }
+  @include media-breakpoint-up(md){
+  /*
+    width:calc( #{map-get($container-max-widths,'md')} - #{$grid-gutter-width});
+  }
+  @include media-breakpoint-up(lg){
+  */
+    width:auto;
+  }
+}
+.table-match-center{
+  //width:$container-match-center-width;
+  width: 100%;
+}
+.modal{
+  overflow-y: scroll;
+  &-match{
+    .modal-dialog{
+      max-width:map-get($container-max-widths,'lg') - $grid-gutter-width;
+    }
+  }
+  &-chat{
+    .modal-dialog{
+      max-width:50.75rem;
+      .modal-body.modal-body-chatroom {
+        height: calc(100vh - 15rem);
+        @include media-breakpoint-up(md){
+          height: calc(100vh - 21rem);
+        }
+        overflow-y: scroll;
+      }
+    }
+  }
+}
+// Collapse toggler
+.collapse-toggler{
+  cursor:pointer;
+
+  // icon align to block border
+  position:relative;
+  &::after{
+    font-family:"Font Awesome 5 Free";
+    position:absolute; // mark這行，會改layout為icon align to text
+    right:.6em;
+    font-size:1em;
+    line-height:1.6em;
+    text-align:right; // align to block right
+    font-weight:700;  // font awesome 需用"700"字重，才能將icon正確顯示
+    //content:"\f068";    // - // 按之前 已展開
+    //content:"\f056";   // - (圓框) // 按之前 已展開
+    content:"\f077";   // ^ // 按之前 已展開
+  }
+  &[aria-expanded="false"]::after{
+    //content:"\f067";   // + // 按之後 才展開
+    //content:"\f055";   // + (圓框) // 按之後 才展開
+    //content:"\f078";   // ^ // 按之後 才展開
+    content:"\f054";   // > // 按之後 才展開
+  } //END icon align to block border
+
+  // icon align to text
+  > .icon-2down{display:none;}
+  > .icon-2up{display:inline-block;}
+
+  &[aria-expanded="false"]{
+    > .icon-2down{display:inline-block;}
+    > .icon-2up{display:none;}
+  }
+}
+
+// Footer
+
+
+// Patch Bootstrap
+.custom-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.justify-content-evenly{
+  justify-content:space-around;
+  justify-content:space-evenly;
+}
+%columns-lg-3{
+  @include media-breakpoint-up(lg){
+    column-count:3;
+    -moz-column-count:3;
+    -webkit-column-count:3;
+  }
+}
+%columns{
+  > *{
+    display:inline;
+  }
+}
+// Remove outline
+a, a.nav-link:hover, a.nav-link:focus, button:focus{
+    outline: none;
+}
+
+// Table cell vertical middle
+.table{
+  th,td{
+  vertical-align:middle;
+  }
+}
+
+
+/* Custom CSS Over */
+
+/* [1] The container */
+.img-hover-zoom-container {
+  overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+
+/* [2] Transition property for smooth transformation of images */
+.img-hover-zoom img {
+  transition: transform .5s ease;
+}
+
+/* [3] Finally, transforming the image when container gets hovered */
+.img-hover-zoom:hover img {
+  transform: scale(1.3);
+}
+
+/* for mobile mmenu.js */
+.navbar-toggler {
+  padding: 0.5rem 0.75rem;
+}
+.navbar-light .navbar-toggler {
+  color: $body-color;
+}
+.landing-page .at-top > .navbar .navbar-toggler {
+  color: $white;
+}
+
+.collapsing {
+  -webkit-transition: none;
+  transition: none;
+  display: none;
+}
+
+.xpt-mobile-menu:not(.mm-menu) {
+  display: none;
+}
+.mm-listitem::after {
+  left: 0;
+  right: 0;
+}
+
+.carousel-control-prev-icon {
+  background-image: none;
+}
+.carousel-control-next-icon {
+  background-image: none;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  width: 100%;
+}
+
+.badge.font-small {
+  font-size: 0.55rem;
+  line-height: 0.65rem;
+}
+
+// for mobile menu
+.navbar-nav .mm-btn {
+  padding-right: 0;
+  padding-left: 0;
+}
+.navbar-side-avatar-img-mobile {
+  width: auto;
+  max-height: 6rem;
+  max-width: 95%;
+  height: auto;
+}
+
+.alert {
+  top: 0.4em;
+}
+
+/* 無障礙 AAA 模組修正 */
+
+.font-small{
+  font-size: 0.75rem;
+}
+.font-normal {
+  font-size: 1rem;
+}
+.font-large {
+  font-size: 1.25rem;
+}
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+[class*="ch-font"]:hover {
+  border-color: $dark;
+  color: $dark;
+}
+.btn:focus, .btn:hover {
+  text-decoration: none;
+}
+[class*="ch-font"] {
+  width: 2.25em;
+  height: 2.25em;
+  border: 1px solid transparent;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-radius: 20px;
+  padding: 0;
+  text-align: center;
+  font-size: 1em;
+}
+html.font-large button.ch-font-large, html.font-normal button.ch-font-normal, html.font-small button.ch-font-small {
+  background: $dark;
+  color: #FFF;
+}
+.landing-page .at-top > .navbar .btn {
+  color: #fff;
+}
+
+body a:focus {
+  outline: $navbar-hover-color dotted 3px;
+  outline-offset: 0px;
+}
+
+.mm-listitem > a.nav-link.disabled {
+  color: #bbb;
+}
+
+
+
+/* modal */
+.modal-xl {
+  max-width: 1200px;
+  margin: 1.75rem auto;
+}
+
+div.dmInner input[type="email"],
+div.dmInner input[type="number"],
+div.dmInner input[type="password"],
+div.dmInner input[type="tel"],
+div.dmInner input[type="text"],
+div.dmInner select,
+div.dmInner textarea {
+  background-color: red;
+}

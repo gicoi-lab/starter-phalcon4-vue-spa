@@ -1,0 +1,4 @@
+@mixin icon-f($color){
+  $svg-in-url:url("data:image/svg+xml,f");
+  background-image:escape-svg($svg-in-url);
+}
